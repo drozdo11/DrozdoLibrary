@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 232, 209);
+  padding: 50px;
+  min-height: 100vh;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px;
+  align-items: center;
+}
+
+.card a {
+  text-decoration: none;
+}

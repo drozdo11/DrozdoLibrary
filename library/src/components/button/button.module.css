@@ -1,0 +1,20 @@
+.button-style {
+    background-color: rgb(190, 105, 105);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-family: cursive;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 2px 4px;
+    border: 2px solid;
+}
+
+.button-style:hover {
+    color: rgb(168, 0, 0);
+}
+
+a.button-style {
+    text-decoration: none;
+}

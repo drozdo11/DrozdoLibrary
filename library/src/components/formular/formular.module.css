@@ -1,0 +1,16 @@
+.normal {
+    width: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.box-hidden {
+    display: flex;
+    margin: 50px auto;
+    padding: 30px;
+}

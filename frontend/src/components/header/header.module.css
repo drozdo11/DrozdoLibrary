@@ -1,0 +1,7 @@
+.top-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    color: #380b0b;
+}

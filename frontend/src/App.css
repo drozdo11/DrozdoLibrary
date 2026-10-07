@@ -1,0 +1,19 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-bg-color);
+}
+
+:root {
+ font-family: 'InterVariable', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'InterVariable', sans-serif;
+  }
+}

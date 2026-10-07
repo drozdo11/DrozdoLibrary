@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #be6969;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.container a {
+    text-decoration: none;
+    color: #380b0b;
+}

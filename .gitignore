@@ -1,0 +1,29 @@
+# Visual Studio
+.vs/
+**/.vs/
+
+# .NET
+**/bin/
+**/obj/
+
+# Node.js
+**/node_modules/
+
+# Next.js
+**/.next/
+
+# Vite
+**/dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

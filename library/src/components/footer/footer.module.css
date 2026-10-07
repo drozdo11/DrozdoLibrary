@@ -1,0 +1,24 @@
+.container {
+  background-color: rgb(190, 105, 105);
+  color: #ffffff;
+  flex-direction: column;
+  border-radius: 10px;
+  text-align: center;
+   padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.icon {
+  text-decoration: none;
+  color: #ffffff;
+}

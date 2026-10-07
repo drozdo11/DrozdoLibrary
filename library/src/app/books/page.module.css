@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 232, 209);
+  padding: 50px;
+  min-height: 100vh;
+  text-decoration: none;
+}
+
+.card {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.buttons-position {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
