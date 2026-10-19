@@ -18,20 +18,20 @@ export default function Page() {
                 addOrUpdateReader(formData)
                     .then(data => alert(data))
             }}>
-                <input type="hidden" name="citizenshipCardNumber" value={citizenshipCardNumber} />
-                <InputField name="citizenshipCardNumber" readOnly={false}>
+                <InputField type="hidden" name="citizenshipCardNumber" value={citizenshipCardNumber} readOnly={false} />
+                <InputField name="citizenshipCardNumber" readOnly={false} required={true}>
                     Enter your citizenshipCardNumber:
                 </InputField>
 
-                <InputField name="name" readOnly={false}>
+                <InputField name="name" readOnly={false} required={true}>
                     Enter your name:
                 </InputField>
 
-                <InputField name="surname" readOnly={false}>
+                <InputField name="surname" readOnly={false} required={true}>
                     Enter your surname:
                 </InputField>
 
-                <InputField name="dateOfBirth" type={"datetime-local"} readOnly={false} submit={true} submitText="Add">
+                <InputField name="dateOfBirth" type={"datetime-local"} readOnly={false} required={true} submit={true} submitText="Add">
                     Enter your dateOfBirth:
                 </InputField>
             </Formular>

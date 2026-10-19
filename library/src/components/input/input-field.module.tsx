@@ -10,7 +10,8 @@ type params = {
     readOnly: boolean;
     submit?: boolean;
     submitText?: string;
-    type?: 'text' | 'datetime-local';
+    type?: 'text' | 'datetime-local' | 'hidden';
+    required?: boolean;
     onChange?: (value: React.FormEvent<HTMLInputElement>) => void;
     onBlur?: (value: React.FocusEvent<HTMLInputElement>) => void;
     onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -18,11 +19,20 @@ type params = {
 };
 
 function InputField(params: params) {
+    if (params.type === 'hidden') {
+        return (
+            <input
+                type="hidden"
+                name={params.name}
+                value={params.value}
+            />
+        );
+    }
     return (
         <div className={styles.container}>
             <label className={styles["label"]}>
                 {params.children}
-                <input className={styles["input"]} type={params.type ?? "text"} name={params.name} value={params.value} readOnly={params.readOnly} onChange={(e) => {
+                <input className={styles["input"]} type={params.type ?? "text"} name={params.name} value={params.value} readOnly={params.readOnly} required={params.required} onChange={(e) => {
                     if (params.onChange) {
                         params.onChange(e);
                     }

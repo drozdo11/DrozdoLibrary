@@ -19,7 +19,7 @@ export default function Page() {
                 addOrUpdateBook(formData)
                     .then(data => alert(data))
             }}>
-                <input type="hidden" name="bookId" value={bookId} />
+                <InputField type="hidden" name="bookId" value={bookId} readOnly={false} />
                 <InputField name="name" readOnly={false}>
                     Enter your name:
                 </InputField>

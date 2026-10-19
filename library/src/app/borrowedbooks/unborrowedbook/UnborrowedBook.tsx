@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 import Formular from '@/components/formular/formular.module';
 import Button from '@/components/button/button.module';
 import { RiArrowGoBackFill } from 'react-icons/ri';
+import InputField from '@/components/input/input-field.module';
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -32,8 +33,7 @@ export default function Page() {
             }}>
                 {!isReturned &&
                     <>
-                        <input type="hidden" name="borrowId" value={borrowId}
-                        />
+                        <InputField type="hidden" name="borrowId" value={borrowId} readOnly={false}                        />
 
                         <Button type="submit">
                             Return

@@ -17,7 +17,7 @@ export default function Page() {
                 borrowBook(formData)
                     .then(data => alert(data));
             }}>
-                <input type="hidden" name="bookId" value={bookId} />
+                <InputField type="hidden" name="bookId" value={bookId} readOnly={false} />
 
                 <InputField name="citizenshipCardNumber" readOnly={false} submit={true} submitText="Borrow">
                     Enter your citizenshipCardNumber

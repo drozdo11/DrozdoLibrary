@@ -82,14 +82,14 @@ namespace libraryApi.Repositories
                     {
                         using (var conn = new MySqlConnection(_configuration.GetSection("db").GetValue<string>("DefaultConnection")))
                         {
-                            var parameters = new {bookId = book.BookId, name = book.Name, autor = book.Autor, isBorrow = book.IsBorrow, description = book.Description };
+                            var parameters = new {bookId = book.BookId, name = book.Name, autor = book.Autor, isBorrow = book.IsBorrow, description = book.Description};
                             var sql = $@"UPDATE books SET name = @name, autor = @autor, isBorrow = @isBorrow, description = @description WHERE bookId = @bookId;";
 
                             conn.Execute(sql, parameters);
                         }
                     }
                 }
-                else 
+                else
                 {
                     throw new Exception("Book is empty !");
                 }
@@ -108,6 +108,12 @@ namespace libraryApi.Repositories
                 using (var conn = new MySqlConnection(_configuration.GetSection("db").GetValue<string>("DefaultConnection")))
                 {
                     var parameters = new { Id = id };
+                    var borrowedCount = conn.ExecuteScalar<int>("SELECT COUNT(*) FROM borrowedbooks WHERE BookId = @id", parameters);
+
+                    if (borrowedCount > 0)
+                    {
+                        throw new Exception("The book can't be deleted because it has borrowing records!");
+                    }
                     var numberOfDeletedRows = conn.Execute("DELETE FROM books WHERE bookId = @id", parameters);
 
                     if (numberOfDeletedRows == 0)

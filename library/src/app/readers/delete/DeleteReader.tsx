@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import Formular from '@/components/formular/formular.module';
 import Button from '@/components/button/button.module';
 import { RiArrowGoBackFill } from 'react-icons/ri';
+import InputField from '@/components/input/input-field.module';
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -18,7 +19,7 @@ export default function Page() {
                 deleteReader(formData)
                     .then(data => alert(data));
             }}>
-                <input type="hidden" name="citizenshipCardNumber" value={citizenshipCardNumber} />
+                <InputField type="hidden" name="citizenshipCardNumber" value={citizenshipCardNumber} readOnly={false} />
 
                 <Button type="submit">
                     Delete

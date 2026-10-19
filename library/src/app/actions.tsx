@@ -50,7 +50,7 @@ export async function addOrUpdateBook(formData: FormData): Promise<string | unde
 
 export async function deleteBook(formData: FormData): Promise<string | undefined> {
     const bookId = Number(formData.get('bookId'));
-    await fetch(`http://localhost:5000/api/books/book?id=${bookId}`,
+    const response = await fetch(`http://localhost:5000/api/books/book?id=${bookId}`,
         {
             method: 'DELETE',
             headers: {
@@ -59,6 +59,10 @@ export async function deleteBook(formData: FormData): Promise<string | undefined
             }
         }
     );
+    if (!response.ok) {
+        const error = await response.text();
+        return error.replace(/^"|"$/g, '');
+    }
     return "Book has been successfuly deleted!";
 }
 
@@ -81,7 +85,7 @@ export async function addOrUpdateReader(formData: FormData): Promise<string | un
 
 export async function deleteReader(formData: FormData): Promise<string | undefined> {
     const citizenshipCardNumber = formData.get('citizenshipCardNumber');
-    await fetch(`http://localhost:5000/api/readers/reader?citizenshipCardNumber=${citizenshipCardNumber}`,
+    const response = await fetch(`http://localhost:5000/api/readers/reader?citizenshipCardNumber=${citizenshipCardNumber}`,
         {
             method: 'DELETE',
             headers: {
@@ -90,6 +94,12 @@ export async function deleteReader(formData: FormData): Promise<string | undefin
             }
         }
     );
+
+    const result = await response.text();
+
+    if (!response.ok) {
+        return result.replace(/^"|"$/g, '');
+    }
     return "Reader has been successfuly deleted!";
 }
 
@@ -211,5 +221,3 @@ export async function getBorrowedBook(borrowId: number) {
     }
     return await data.json();
 }
-
-

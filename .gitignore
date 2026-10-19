@@ -5,20 +5,28 @@
 # .NET
 **/bin/
 **/obj/
+*.user
+*.suo
 
 # Node.js
 **/node_modules/
 
 # Next.js
 **/.next/
+**/out/
 
 # Vite
 **/dist/
 
-# Environment variables
+# Environment variables and secrets
 .env
+.env.*
 .env.local
 .env.*.local
+
+# Logs
+*.log
+logs/
 
 # IDE
 .vscode/
